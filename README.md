@@ -1,18 +1,24 @@
+FREE LUNCH
+----------
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+Project Description:
+ - A web-based application where users can buy groceries online and have them delivered to their doorstep.
+ - Users can choose products from stores around their home.
+ - Users can order items based on the ingredient list of recipes and can keep a list of favorite recipes.
+ - The system can provide suggested recipes and products based on their order history
+ - The system can automatically suggest recipes based on users’ favourite
 
+USER-INTERFACE:
+Web-application
 
-Hi there! Welcome to Cloud9 IDE!
+FRAMEWORK:
+Ruby-on-Rails
 
-To get you started, create some files, play with the terminal,
-or visit http://docs.c9.io for our documentation.
-If you want, you can also go watch some training videos at
-http://www.youtube.com/user/c9ide.
+DATABASE:
+PostgreSQL
 
-Happy coding!
-The Cloud9 IDE team
+CREATED BY:
+Xiaodong Wang
+Bozhao Qi
+Alejandro Puente
+Grant Davies
