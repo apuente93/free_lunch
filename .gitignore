@@ -4,6 +4,9 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# Ignore c9 folder that is constantly changing
+.c9/
+
 # Ignore bundler config.
 /.bundle
 
