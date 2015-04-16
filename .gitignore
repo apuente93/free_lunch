@@ -4,6 +4,9 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# Ignore cloud9 folder as it is constantly changing, and un-needed
+/.c9
+
 # Ignore bundler config.
 /.bundle
 
