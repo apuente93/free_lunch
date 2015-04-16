@@ -5,7 +5,7 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore cloud9 folder as it is constantly changing, and un-needed
-/.c9
+.c9/
 
 # Ignore bundler config.
 /.bundle
