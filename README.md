@@ -1,5 +1,5 @@
 FREE LUNCH
-----------
+-----------
 
 Project Description:
  - A web-based application where users can buy groceries online and have them delivered to their doorstep.
@@ -22,13 +22,3 @@ Xiaodong Wang
 Bozhao Qi
 Alejandro Puente
 Grant Davies
-
-testtest
-
-test adasadsa
-
-<<<<<<< HEAD
-test3
-=======
-bozhao
->>>>>>> 0e01eaf2d9f292f5109ab4464e0ee643ac768b64
