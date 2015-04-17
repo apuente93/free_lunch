@@ -27,4 +27,8 @@ testtest
 
 test adasadsa
 
+<<<<<<< HEAD
 test3
+=======
+bozhao
+>>>>>>> 0e01eaf2d9f292f5109ab4464e0ee643ac768b64
