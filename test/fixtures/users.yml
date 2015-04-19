@@ -1,4 +1,4 @@
 ale:
   username: apuente93
   email: apuente@wisc.edu
-  password_digest: <%= User.digest('password') %
+  password_digest: <%= User.digest('password') %>
