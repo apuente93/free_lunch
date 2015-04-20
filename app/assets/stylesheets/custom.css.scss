@@ -108,12 +108,18 @@ footer a {
   color: #555;
 }
 
+footer nav
+{
+  float: right;
+  margin-top: -52px;
+}
+
 footer a:hover {
   color: #222;
 }
 
 footer small {
-  float: left;
+  text-align: center;
 }
 
 footer ul {

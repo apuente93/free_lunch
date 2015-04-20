@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    #@stores = Store.find(:all, :origin=>@user.zip_code, :conditions=>'distance<10')
   end
   
   def new
