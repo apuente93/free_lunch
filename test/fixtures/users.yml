@@ -9,3 +9,11 @@ archer:
   email: duchess@example.gov
   zip_code: 53403
   password_digest: <%= User.digest('password') %>
+  
+<% 30.times do |n| %>
+user_<%= n %>:
+  username:  <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  zip_code: 55555
+  password_digest: <%= User.digest('password') %>
+<% end %>
