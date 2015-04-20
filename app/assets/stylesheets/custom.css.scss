@@ -70,6 +70,14 @@ p {
   line-height: 1.7em;
 }
 
+/* home image */
+
+.style_logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* header */
 
 #logo {
@@ -77,7 +85,6 @@ p {
   margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
-  text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
