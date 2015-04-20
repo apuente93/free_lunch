@@ -1,8 +1,9 @@
-User.create!(username:  "Example User",
-             email: "example@wisc.edu",
-             zip_code: 55555,
-             password:              "foobar",
-             password_confirmation: "foobar")
+User.create!(username:  "apuente93",
+             email: "apuente@wisc.edu",
+             zip_code: 53715,
+             password:              "9066278202",
+             password_confirmation: "9066278202",
+             admin: true)
 
 99.times do |n|
   username  = Faker::Internet.user_name

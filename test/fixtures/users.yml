@@ -3,6 +3,7 @@ ale:
   email: apuente@wisc.edu
   zip_code: 53715
   password_digest: <%= User.digest('password') %>
+  admin: true
   
 archer:
   username: Sterling Archer
