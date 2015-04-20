@@ -1,4 +1,11 @@
 ale:
   username: apuente93
   email: apuente@wisc.edu
+  zip_code: 53715
+  password_digest: <%= User.digest('password') %>
+  
+archer:
+  username: Sterling Archer
+  email: duchess@example.gov
+  zip_code: 53403
   password_digest: <%= User.digest('password') %>
