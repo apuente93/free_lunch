@@ -1,4 +1,12 @@
 class User < ActiveRecord::Base
+  has_many :favorites
+  has_many :recipe, through: :favorites
+  
+  has_many :place
+  has_many :order, through: :place
+  has_many :product, through: :place
+  has_one :store, through: :place
+  
   attr_accessor :remember_token
   before_save { self.email = email.downcase }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150420234956) do
+ActiveRecord::Schema.define(version: 20150421001508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "recipe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "favorites", ["recipe_id"], name: "index_favorites_on_recipe_id", using: :btree
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.date     "date"
@@ -22,6 +32,21 @@ ActiveRecord::Schema.define(version: 20150420234956) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "places", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "user_id"
+    t.integer  "store_id"
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "places", ["order_id"], name: "index_places_on_order_id", using: :btree
+  add_index "places", ["product_id"], name: "index_places_on_product_id", using: :btree
+  add_index "places", ["store_id"], name: "index_places_on_store_id", using: :btree
+  add_index "places", ["user_id"], name: "index_places_on_user_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -36,6 +61,17 @@ ActiveRecord::Schema.define(version: 20150420234956) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "sells", force: :cascade do |t|
+    t.integer  "store_id"
+    t.integer  "product_id"
+    t.float    "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "sells", ["product_id"], name: "index_sells_on_product_id", using: :btree
+  add_index "sells", ["store_id"], name: "index_sells_on_store_id", using: :btree
 
   create_table "stores", force: :cascade do |t|
     t.string   "name"
@@ -55,4 +91,25 @@ ActiveRecord::Schema.define(version: 20150420234956) do
     t.boolean  "admin",           default: false
   end
 
+  create_table "uses", force: :cascade do |t|
+    t.integer  "recipe_id"
+    t.integer  "product_id"
+    t.string   "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "uses", ["product_id"], name: "index_uses_on_product_id", using: :btree
+  add_index "uses", ["recipe_id"], name: "index_uses_on_recipe_id", using: :btree
+
+  add_foreign_key "favorites", "recipes"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "places", "orders"
+  add_foreign_key "places", "products"
+  add_foreign_key "places", "stores"
+  add_foreign_key "places", "users"
+  add_foreign_key "sells", "products"
+  add_foreign_key "sells", "stores"
+  add_foreign_key "uses", "products"
+  add_foreign_key "uses", "recipes"
 end
