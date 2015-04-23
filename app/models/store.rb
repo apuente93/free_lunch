@@ -1,7 +1,7 @@
 class Store < ActiveRecord::Base
+  has_many :products, dependent: :destroy
   acts_as_mappable :auto_geocode=>{:field=>:address, :error_message=>'Could not geocode address'}
   has_many :sell
-  has_many :product, through: :sell
   
   has_many :place
   has_many :product, through: :place

@@ -18,7 +18,7 @@ class StoresController < ApplicationController
   
   def show
     @store = Store.find(params[:id])
-    #list all products for this store
+    @products = @store.products
   end
   
   private

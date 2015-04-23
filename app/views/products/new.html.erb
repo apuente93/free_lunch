@@ -1,0 +1,22 @@
+<% provide(:title, 'Create Product') %>
+<h1>Create Product</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@product) do |f| %>
+      
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+  
+      <%= f.label :category %>
+      <%= f.select :category, options_for_select(%w[Dairy Produce Snacks 
+      International Bakery Beverages]), class: 'form-control' %>
+      
+      <%= f.label :store_id %>
+      <% stores_array = Store.all.map { |store| [store.name, store.id] } %>
+      <%= f.select :store_id, options_for_select(stores_array), class: 'form-control' %>
+      
+      <%= f.submit "Create product", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

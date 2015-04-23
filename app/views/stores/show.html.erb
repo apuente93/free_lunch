@@ -1,3 +1,14 @@
 <% provide(:title, @store.name) %>
 <h1><%= @store.name %></h1>
 <h2><%= @store.address %></h2>
+
+<div>
+    <% if @store.products.any? %>
+      <h3>Products (<%= @store.products.count %>)</h3>
+      <% @products.each do |product| %>
+      <ul class = "content_column">
+        <li>Name: <%= product.name %>, Category: <%= product.category %></li>
+      </ul>
+      <% end %>
+    <% end %>
+</div>
