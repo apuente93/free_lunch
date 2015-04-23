@@ -16,6 +16,11 @@ class StoresController < ApplicationController
     end
   end
   
+  def show
+    @store = Store.find(params[:id])
+    #list all products for this store
+  end
+  
   private
 
     def store_params
