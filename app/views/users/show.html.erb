@@ -9,3 +9,8 @@
     </section>
   </aside>
 </div>
+
+<% @stores.each do |store| %>
+  <li><%= store.name %></li>
+  <li><%= store.address %></li>
+<% end %>

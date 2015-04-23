@@ -19,7 +19,7 @@ class StoresController < ApplicationController
   private
 
     def store_params
-      params.require(:store).permit(:name, :zip_code)
+      params.require(:store).permit(:name, :address, :lng, :lat)
     end
     
     # Confirms a logged-in user.

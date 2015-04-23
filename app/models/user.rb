@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  acts_as_mappable :auto_geocode=>{:field=>:address, :error_message=>'Could not geocode address'}
   has_many :favorites
   has_many :recipe, through: :favorites
   
@@ -15,7 +16,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 42 }, 
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  validates :zip_code, presence: true, length: { is: 5 }
+  validates :address, presence: true, length: { maximum: 50 }
   has_secure_password
   validates :password, length: { minimum: 6 }, allow_blank: true
   

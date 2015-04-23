@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    #@stores = Store.find(:all, :origin=>@user.zip_code, :conditions=>'distance<10')
+    @stores = Store.within(5, origin: [@user.lat, @user.lng])
   end
   
   def new
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:username, :email, :zip_code, :password,
+      params.require(:user).permit(:username, :email, :address, :password,
                                    :password_confirmation)
     end
     
