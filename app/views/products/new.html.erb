@@ -9,8 +9,8 @@
       <%= f.text_field :name, class: 'form-control' %>
   
       <%= f.label :category %>
-      <%= f.select :category, options_for_select(%w[Dairy Produce Snacks 
-      International Bakery Beverages]), class: 'form-control' %>
+      <%= f.select :category, options_for_select(["Household Supplies", "Personal Care", "Snacks", 
+      "Breakfast Foods", "Canned Foods", "Beverages"]), class: 'form-control' %>
       
       <%= f.label :store_id %>
       <% stores_array = Store.all.map { |store| [store.name, store.id] } %>

@@ -1,3 +1,7 @@
+require 'rubygems'
+require 'nokogiri'
+require 'open-uri'
+
 #Creates administrative user
 User.create!(username:  "apuente93",
              email: "apuente@wisc.edu",
@@ -55,6 +59,103 @@ Store.create!(name:  "Copps",
 Store.create!(name:  "Willy Street Co-op",
              address: "1221 Williamson St, Madison, WI 53703",
              image_url: "http://www.progressivegrocer.com/sites/default/files/styles/article-full/public/PG%20Articles/Willy%20Street%20Co-op%20Resized.jpg?itok=2OziQe7L")
+
+product_snacks_page = Nokogiri::HTML(open("http://www.amazon.com/b/ref=pntry_strfnt_cat_2?ie=UTF8&node=8422705011&pf_rd_p=2086987622&pf_rd_s=merchandised-search-5&pf_rd_t=101&pf_rd_i=7301146011&pf_rd_m=ATVPDKIKX0DER&pf_rd_r=069KCFGFX8XDSFZ9B9WB"))   
+product_snacks = product_snacks_page.css("div.rsltGrid.prod.celwidget")
+
+product_beverages_page = Nokogiri::HTML(open("http://www.amazon.com/b/ref=pntry_strfnt_cat_3?ie=UTF8&node=8422706011&pf_rd_p=2078136842&pf_rd_s=merchandised-search-5&pf_rd_t=101&pf_rd_i=7301146011&pf_rd_m=ATVPDKIKX0DER&pf_rd_r=1QA724FJ41687W8MP35W"))   
+product_beverages = product_beverages_page.css("div.rsltGrid.prod.celwidget")
+
+product_household_page = Nokogiri::HTML(open("http://www.amazon.com/b/ref=amb_link_398549482_12?ie=UTF8&node=8308027011&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-leftnav&pf_rd_r=1WTBSTB3DERVX2G1CFCV&pf_rd_t=101&pf_rd_p=2083547182&pf_rd_i=8308028011"))   
+product_household = product_household_page.css("div.rsltGrid.prod.celwidget")
+
+product_personal_page = Nokogiri::HTML(open("http://www.amazon.com/b/ref=pntry_wayfind_5?node=8308028011"))   
+product_personal = product_personal_page.css("div.rsltGrid.prod.celwidget")
+
+product_breakfast_page = Nokogiri::HTML(open("http://www.amazon.com/s/ref=lp_8422704011_nr_n_1?srs=7301146011&fst=as%3Aoff&rh=i%3Apantry%2Cn%3A8422704011%2Cn%3A!16310211%2Cn%3A16310251&bbn=8422704011&ie=UTF8&qid=1430435419&rnid=16310211"))   
+product_breakfast = product_breakfast_page.css("div.rsltGrid.prod.celwidget")
+
+product_canned_page = Nokogiri::HTML(open("http://www.amazon.com/s/ref=amb_link_406100822_3?ie=UTF8&bbn=8422704011&rh=i%3Apantry%2Cn%3A8422704011%2Cn%3A!16310211%2Cn%3A6464939011&srs=7301146011&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-5&pf_rd_r=0VSD9QJT0D5F3224B4X1&pf_rd_t=101&pf_rd_p=2062785582&pf_rd_i=8422704011"))   
+product_canned = product_breakfast_page.css("div.rsltGrid.prod.celwidget")
+
+
+product_snacks.each do |snack|
+  a = snack.css("h3.newaps")
+	if "#{snack.text}".squish.empty?
+	else
+	 if Product.find_by_name("#{a.text}".squish).nil?
+	  Product.create!(name: "#{a.text}".squish,
+		category: "Snacks",
+		store_id:  1)
+	 else
+	 end
+	end
+end
+
+product_beverages.each do |beverage|
+  a = beverage.css("h3.newaps")
+	if "#{beverage.text}".squish.empty?
+	else
+	  if Product.find_by_name("#{a.text}".squish).nil?
+	    Product.create!(name: "#{a.text}".squish,
+	    category: "Beverages",
+	    store_id:  1)
+    else
+	  end
+	end
+end
+
+product_household.each do |household|
+  a = household.css("h3.newaps")
+	if "#{household.text}".squish.empty?
+	else
+	  if Product.find_by_name("#{a.text}".squish).nil?
+	    Product.create!(name: "#{a.text}".squish,
+	    category: "Household Supplies",
+	    store_id:  1)
+    else
+	  end
+	end
+end
+
+product_personal.each do |personal|
+  a = personal.css("h3.newaps")
+	if "#{personal.text}".squish.empty?
+	else
+	  if Product.find_by_name("#{a.text}".squish).nil?
+	    Product.create!(name: "#{a.text}".squish,
+	    category: "Personal Care",
+	    store_id:  1)
+    else
+	  end
+	end
+end
+
+product_breakfast.each do |breakfast|
+  a = breakfast.css("h3.newaps")
+	if "#{breakfast.text}".squish.empty?
+	else
+	  if Product.find_by_name("#{a.text}".squish).nil?
+	    Product.create!(name: "#{a.text}".squish,
+	    category: "Breakfast Foods",
+	    store_id:  1)
+    else
+	  end
+	end
+end
+
+product_canned.each do |canned|
+  a = canned.css("h3.newaps")
+	if "#{canned.text}".squish.empty?
+	else
+	  if Product.find_by_name("#{a.text}".squish).nil?
+	    Product.create!(name: "#{a.text}".squish,
+	    category: "Canned Foods",
+	    store_id:  1)
+    else
+	  end
+	end
+end
              
 =begin
 99.times do |n|
