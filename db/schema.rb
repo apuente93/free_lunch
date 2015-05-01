@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430233207) do
+ActiveRecord::Schema.define(version: 20150501210229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,11 +27,14 @@ ActiveRecord::Schema.define(version: 20150430233207) do
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
-    t.date     "date"
-    t.boolean  "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "product_id"
   end
+
+  add_index "orders", ["product_id"], name: "index_orders_on_product_id", using: :btree
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "places", force: :cascade do |t|
     t.integer  "order_id"
@@ -114,6 +117,8 @@ ActiveRecord::Schema.define(version: 20150430233207) do
 
   add_foreign_key "favorites", "recipes"
   add_foreign_key "favorites", "users"
+  add_foreign_key "orders", "products"
+  add_foreign_key "orders", "users"
   add_foreign_key "places", "orders"
   add_foreign_key "places", "products"
   add_foreign_key "places", "stores"

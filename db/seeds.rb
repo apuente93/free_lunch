@@ -193,17 +193,3 @@ product_canned.each do |canned|
 	  end
 	end
 end
-             
-begin
-99.times do |n|
-  username  = Faker::Internet.user_name
-  email = Faker::Internet.email
-  address = Faker::Address.street_address
-  password = "password"
-  User.create!(username:  username,
-               email: email,
-               address: address,
-               password:              password,
-               password_confirmation: password)
-end
-end

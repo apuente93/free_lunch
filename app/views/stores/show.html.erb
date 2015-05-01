@@ -17,8 +17,10 @@
             <li><%= product.category %></li>
             <li>$<%= product.price %></li>
             <li>
-              <%= button_to "Add to Order", root_path,
-              :class => "btn btn-primary btn-sm", :method => :get %>
+              <%= form_for(@order) do |f| %>
+                <%= hidden_field_tag(:product_id, product.id) %>
+                <%= f.submit "Add to Order", class: "btn btn-primary btn-sm" %>
+              <% end %>
             </li>
           </ul>
         <% end %>
