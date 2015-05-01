@@ -78,86 +78,123 @@ product_breakfast = product_breakfast_page.css("div.rsltGrid.prod.celwidget")
 product_canned_page = Nokogiri::HTML(open("http://www.amazon.com/s/ref=amb_link_406100822_3?ie=UTF8&bbn=8422704011&rh=i%3Apantry%2Cn%3A8422704011%2Cn%3A!16310211%2Cn%3A6464939011&srs=7301146011&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-5&pf_rd_r=0VSD9QJT0D5F3224B4X1&pf_rd_t=101&pf_rd_p=2062785582&pf_rd_i=8422704011"))   
 product_canned = product_breakfast_page.css("div.rsltGrid.prod.celwidget")
 
+stores = Store.all
 
 product_snacks.each do |snack|
-  a = snack.css("h3.newaps")
+  a = snack.css("h3.newaps a")
+  b = snack.css("img")
+  c = snack.css("span.bld.lrg.red")
 	if "#{snack.text}".squish.empty?
 	else
 	 if Product.find_by_name("#{a.text}".squish).nil?
-	  Product.create!(name: "#{a.text}".squish,
-		category: "Snacks",
-		store_id:  1)
+	    stores.each do |store|
+	      Product.create!(name: "#{a.text}".squish,
+		    category: "Snacks",
+		    price: "#{c.text}".delete( "$" ).to_f,
+		    image_url: "#{b.attr('src')}".squish,
+	  	  store_id:  store.id)
+	    end
 	 else
 	 end
 	end
 end
 
 product_beverages.each do |beverage|
-  a = beverage.css("h3.newaps")
+  a = beverage.css("h3.newaps a")
+  b = beverage.css("img")
+  c = beverage.css("span.bld.lrg.red")
 	if "#{beverage.text}".squish.empty?
 	else
 	  if Product.find_by_name("#{a.text}".squish).nil?
-	    Product.create!(name: "#{a.text}".squish,
-	    category: "Beverages",
-	    store_id:  1)
+	    stores.each do |store|
+	      Product.create!(name: "#{a.text}".squish,
+	      category: "Beverages",
+	      price: "#{c.text}".delete( "$" ).to_f,
+		    image_url: "#{b.attr('src')}".squish,
+	      store_id:  store.id)
+	    end
     else
 	  end
 	end
 end
 
 product_household.each do |household|
-  a = household.css("h3.newaps")
+  a = household.css("h3.newaps a")
+  b = household.css("img")
+  c = household.css("span.bld.lrg.red")
 	if "#{household.text}".squish.empty?
 	else
 	  if Product.find_by_name("#{a.text}".squish).nil?
-	    Product.create!(name: "#{a.text}".squish,
-	    category: "Household Supplies",
-	    store_id:  1)
+	    stores.each do |store|
+	      Product.create!(name: "#{a.text}".squish,
+	      category: "Household Supplies",
+	      price: "#{c.text}".delete( "$" ).to_f,
+		    image_url: "#{b.attr('src')}".squish,
+	      store_id:  store.id)
+	    end
     else
 	  end
 	end
 end
 
 product_personal.each do |personal|
-  a = personal.css("h3.newaps")
+  a = personal.css("h3.newaps a")
+  b = personal.css("img")
+  c = personal.css("span.bld.lrg.red")
 	if "#{personal.text}".squish.empty?
 	else
 	  if Product.find_by_name("#{a.text}".squish).nil?
-	    Product.create!(name: "#{a.text}".squish,
-	    category: "Personal Care",
-	    store_id:  1)
+	    stores.each do |store|
+	      Product.create!(name: "#{a.text}".squish,
+	      category: "Personal Care",
+	      price: "#{c.text}".delete( "$" ).to_f,
+		    image_url: "#{b.attr('src')}".squish,
+	      store_id:  store.id)
+	    end
     else
 	  end
 	end
 end
 
 product_breakfast.each do |breakfast|
-  a = breakfast.css("h3.newaps")
+  a = breakfast.css("h3.newaps a")
+  b = breakfast.css("img")
+  c = breakfast.css("span.bld.lrg.red")
 	if "#{breakfast.text}".squish.empty?
 	else
 	  if Product.find_by_name("#{a.text}".squish).nil?
-	    Product.create!(name: "#{a.text}".squish,
-	    category: "Breakfast Foods",
-	    store_id:  1)
+	    stores.each do |store|
+	      Product.create!(name: "#{a.text}".squish,
+	      category: "Breakfast Foods",
+	      price: "#{c.text}".delete( "$" ).to_f,
+		    image_url: "#{b.attr('src')}".squish,
+	      store_id:  store.id)
+	    end
     else
 	  end
 	end
 end
 
 product_canned.each do |canned|
-  a = canned.css("h3.newaps")
+  a = canned.css("h3.newaps a")
+  b = canned.css("img")
+  c = canned.css("span.bld.lrg.red")
 	if "#{canned.text}".squish.empty?
 	else
 	  if Product.find_by_name("#{a.text}".squish).nil?
-	    Product.create!(name: "#{a.text}".squish,
-	    category: "Canned Foods",
-	    store_id:  1)
+	    stores.each do |store|
+	      Product.create!(name: "#{a.text}".squish,
+	      category: "Canned Foods",
+	      price: "#{c.text}".delete( "$" ).to_f,
+		    image_url: "#{b.attr('src')}".squish,
+	      store_id:  store.id)
+	    end
     else
 	  end
 	end
 end
              
-=begin
+begin
 99.times do |n|
   username  = Faker::Internet.user_name
   email = Faker::Internet.email
@@ -169,4 +206,4 @@ end
                password:              password,
                password_confirmation: password)
 end
-=end
+end

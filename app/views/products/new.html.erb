@@ -12,6 +12,12 @@
       <%= f.select :category, options_for_select(["Household Supplies", "Personal Care", "Snacks", 
       "Breakfast Foods", "Canned Foods", "Beverages"]), class: 'form-control' %>
       
+      <%= f.label :price %>
+      <%= f.number_field :price, class: 'form-control', :step => 0.5 %>
+      
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url, class: 'form-control' %>
+      
       <%= f.label :store_id %>
       <% stores_array = Store.all.map { |store| [store.name, store.id] } %>
       <%= f.select :store_id, options_for_select(stores_array), class: 'form-control' %>

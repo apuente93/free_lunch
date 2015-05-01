@@ -7,7 +7,12 @@
       <h3>Products (<%= @store.products.count %>)</h3>
       <% @products.each do |product| %>
       <ul class = "content_column">
-        <li>Name: <%= product.name %>, Category: <%= product.category %></li>
+        <li><%= link_to fetch_image_tag(product.image_url, :width => 100, 
+              :height => 100), root_path, 
+              method: :get %></li>
+        <li><%= product.name %></li>
+        <li><%= product.category %></li>
+        <li>$<%= product.price %></li>
       </ul>
       <% end %>
     <% end %>
