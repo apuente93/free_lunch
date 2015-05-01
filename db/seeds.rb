@@ -194,7 +194,7 @@ product_canned.each do |canned|
 	end
 end
              
-begin
+=begin
 99.times do |n|
   username  = Faker::Internet.user_name
   email = Faker::Internet.email
@@ -206,4 +206,4 @@ begin
                password:              password,
                password_confirmation: password)
 end
-end
+=end
