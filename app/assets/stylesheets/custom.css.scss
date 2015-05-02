@@ -23,6 +23,11 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
+.container
+{
+  clear :both;
+}
+
 body {
   padding-top: 60px;
 }
@@ -242,4 +247,21 @@ input {
 .btn-sm
 {
   width: 100px;
+}
+
+#store_show_title
+{
+  float: left;
+  margin-top: -5px;
+}
+
+#store_show_address
+{
+  clear: both;
+  float: left;
+  margin-top: -20px;
+}
+
+.store_navbar
+{
 }
