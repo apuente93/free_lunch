@@ -86,7 +86,7 @@ product_snacks.each do |snack|
   c = snack.css("span.bld.lrg.red")
 	if "#{snack.text}".squish.empty?
 	else
-	 if Product.find_by_name("#{a.text}".squish).nil?
+	 if Product.find_by_name("#{a.text}".squish).nil? && "#{a.text}".squish.length <= 65
 	    stores.each do |store|
 	      Product.create!(name: "#{a.text}".squish,
 		    category: "Snacks",
@@ -105,7 +105,7 @@ product_beverages.each do |beverage|
   c = beverage.css("span.bld.lrg.red")
 	if "#{beverage.text}".squish.empty?
 	else
-	  if Product.find_by_name("#{a.text}".squish).nil?
+	  if Product.find_by_name("#{a.text}".squish).nil? && "#{a.text}".squish.length <= 65
 	    stores.each do |store|
 	      Product.create!(name: "#{a.text}".squish,
 	      category: "Beverages",
@@ -124,7 +124,7 @@ product_household.each do |household|
   c = household.css("span.bld.lrg.red")
 	if "#{household.text}".squish.empty?
 	else
-	  if Product.find_by_name("#{a.text}".squish).nil?
+	  if Product.find_by_name("#{a.text}".squish).nil? && "#{a.text}".squish.length <= 65
 	    stores.each do |store|
 	      Product.create!(name: "#{a.text}".squish,
 	      category: "Household Supplies",
@@ -143,7 +143,7 @@ product_personal.each do |personal|
   c = personal.css("span.bld.lrg.red")
 	if "#{personal.text}".squish.empty?
 	else
-	  if Product.find_by_name("#{a.text}".squish).nil?
+	  if Product.find_by_name("#{a.text}".squish).nil? && "#{a.text}".squish.length <= 65
 	    stores.each do |store|
 	      Product.create!(name: "#{a.text}".squish,
 	      category: "Personal Care",
@@ -162,7 +162,7 @@ product_breakfast.each do |breakfast|
   c = breakfast.css("span.bld.lrg.red")
 	if "#{breakfast.text}".squish.empty?
 	else
-	  if Product.find_by_name("#{a.text}".squish).nil?
+	  if Product.find_by_name("#{a.text}".squish).nil? && "#{a.text}".squish.length <= 65
 	    stores.each do |store|
 	      Product.create!(name: "#{a.text}".squish,
 	      category: "Breakfast Foods",
@@ -181,7 +181,7 @@ product_canned.each do |canned|
   c = canned.css("span.bld.lrg.red")
 	if "#{canned.text}".squish.empty?
 	else
-	  if Product.find_by_name("#{a.text}".squish).nil?
+	  if Product.find_by_name("#{a.text}".squish).nil? && "#{a.text}".squish.length <= 65
 	    stores.each do |store|
 	      Product.create!(name: "#{a.text}".squish,
 	      category: "Canned Foods",
@@ -192,7 +192,6 @@ product_canned.each do |canned|
     else
 	  end
 	end
-<<<<<<< HEAD
 end
              
 =begin
@@ -208,6 +207,3 @@ end
                password_confirmation: password)
 end
 =end
-=======
-end
->>>>>>> checkout-box

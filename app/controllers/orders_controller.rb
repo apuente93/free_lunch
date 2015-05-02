@@ -11,7 +11,6 @@ class OrdersController < ApplicationController
     @order.product_id = @product.id
     @order.user_id = current_user.id
     if @order.save
-      flash[:success] = "Order added to checkout!"
       redirect_to :back 
     else
       redirect_to :back
