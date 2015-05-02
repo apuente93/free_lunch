@@ -1,15 +1,8 @@
 class Product < ActiveRecord::Base
   belongs_to :store
   
-  has_many :use
-  has_many :recipe, through: :use
-  
-  has_many :sell
-  has_many :store, through: :sell
-  
-  has_many :place
-  has_many :order, through: :place
-  has_one :user, through: :place
+  has_many :orders
+  has_many :users, :through => :orders
   
   validates :store_id, presence: true
   validates :name, presence: true, length: {maximum: 200}

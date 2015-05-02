@@ -1,12 +1,8 @@
 class User < ActiveRecord::Base
   acts_as_mappable :auto_geocode=>{:field=>:address, :error_message=>'Could not geocode address'}
-  has_many :favorites
-  has_many :recipe, through: :favorites
   
-  has_many :place
-  has_many :order, through: :place
-  has_many :product, through: :place
-  has_one :store, through: :place
+  has_many :orders
+  has_many :products, :through => :orders
   
   attr_accessor :remember_token
   before_save { self.email = email.downcase }

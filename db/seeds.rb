@@ -192,6 +192,7 @@ product_canned.each do |canned|
     else
 	  end
 	end
+<<<<<<< HEAD
 end
              
 =begin
@@ -207,3 +208,6 @@ end
                password_confirmation: password)
 end
 =end
+=======
+end
+>>>>>>> checkout-box

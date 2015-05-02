@@ -18,7 +18,11 @@ class StoresController < ApplicationController
   
   def show
     @store = Store.find(params[:id])
+    @user = User.find(current_user.id)
     @products = @store.products
+    if logged_in?
+      @order  = current_user.orders.build
+    end
   end
   
   private
