@@ -19,7 +19,13 @@ class StoresController < ApplicationController
   def show
     @store = Store.find(params[:id])
     @user = User.find(current_user.id)
-    @products = @store.products
+    if params[:cat].to_s.length == 0
+      @products = @store.products
+    else
+      @products = @store.products.where(category: params[:cat]);
+    end
+    puts params[:cat]
+    puts params[:id]
     if logged_in?
       @order  = current_user.orders.build
     end

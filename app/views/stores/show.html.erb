@@ -8,15 +8,16 @@
               Categories <b class="caret"></b>
           </a>
           <ul class="dropdown-menu categories_nav">
-              <li><%= link_to "Snacks", about_path %></li>
-              <li><%= link_to "Beverages", about_path %></li>
-              <li><%= link_to "Household Supplies", about_path %></li>
-              <li><%= link_to "Personal Care", about_path %></li>
-              <li><%= link_to "Breakfast Foods", about_path %></li>
-              <li><%= link_to "Canned Foods", about_path %></li>
+              <li><%= link_to "All", polymorphic_path(@store, :cat => "")  %></li>
+              <li><%= link_to "Snacks", polymorphic_path(@store, :cat => "Snacks")  %></li>
+              <li><%= link_to "Beverages", polymorphic_path(@store, :cat => "Beverages") %></li>
+              <li><%= link_to "Household Supplies", polymorphic_path(@store, :cat => "Household Supplies") %></li>
+              <li><%= link_to "Personal Care", polymorphic_path(@store, :cat => "Personal Care") %></li>
+              <li><%= link_to "Breakfast Foods", polymorphic_path(@store, :cat => "Breakfast Foods") %></li>
+              <li><%= link_to "Canned Foods", polymorphic_path(@store, :cat => "Canned Foods") %></li>
           </ul>
         </li>
-        <li><%= link_to "Past Orders",   about_path, class: "categories_nav" %></li>
+        <li><%= link_to "Past Orders",   url_for(params), class: "categories_nav" %></li>
     </ul>
     </nav>
     <h4 id = "store_show_title"><%= @store.name %></h4>
