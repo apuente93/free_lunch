@@ -2,12 +2,33 @@ require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
 
-#Creates administrative user
+#Creates administrative users
 User.create!(username:  "apuente93",
              email: "apuente@wisc.edu",
              address: "1334 Vilas Ave, Madison, WI 53715",
              password:              "9066278202",
              password_confirmation: "9066278202",
+             admin: true)
+             
+User.create!(username:  "xwang322",
+             email: "xwang322@wisc.edu",
+             address: "4701 Sheboygan Ave, Madison, WI 53705",
+             password:              "9066383432",
+             password_confirmation: "9066383432",
+             admin: true)
+
+User.create!(username:  "bozhao",
+             email: "bqi22@wisc.edu",
+             address: "610 Eagle Height, APT G, Madison, WI 53705",
+             password:              "9068273680",
+             password_confirmation: "9068273680",
+             admin: true)
+
+User.create!(username:  "gdavies",
+             email: "gdavies@wisc.edu",
+             address: "1334 Vilas Ave, Madison, WI 53715",
+             password:              "9067177924",
+             password_confirmation: "9067177924",
              admin: true)
 
 #Creates Fresh Madison Market store
