@@ -52,7 +52,7 @@
         <% @user.orders.each do |order| %>
           <ul class = "content_column2">
             <li><%= link_to fetch_image_tag(order.product.image_url, :width => 75, 
-              :height => 75), root_path, 
+              :height => 75), 
               method: :get %></li>
             <li><%= order.product.name %></li>
             <li>$<%= order.product.price %></li>
