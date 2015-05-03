@@ -76,7 +76,7 @@ product_breakfast_page = Nokogiri::HTML(open("http://www.amazon.com/s/ref=lp_842
 product_breakfast = product_breakfast_page.css("div.rsltGrid.prod.celwidget")
 
 product_canned_page = Nokogiri::HTML(open("http://www.amazon.com/s/ref=amb_link_406100822_3?ie=UTF8&bbn=8422704011&rh=i%3Apantry%2Cn%3A8422704011%2Cn%3A!16310211%2Cn%3A6464939011&srs=7301146011&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-5&pf_rd_r=0VSD9QJT0D5F3224B4X1&pf_rd_t=101&pf_rd_p=2062785582&pf_rd_i=8422704011"))   
-product_canned = product_breakfast_page.css("div.rsltGrid.prod.celwidget")
+product_canned = product_canned_page.css("div.rsltGrid.prod.celwidget")
 
 stores = Store.all
 
