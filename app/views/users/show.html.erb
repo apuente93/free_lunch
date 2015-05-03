@@ -8,7 +8,7 @@
     <% @stores.each do |store| %>
       <tr>
         <td>
-            <ul class = "content_column">
+            <ul class = "content_row">
               <li><%= link_to fetch_image_tag(store.image_url, :width => 200, 
               :height => 200), store, 
               method: :get %></li>

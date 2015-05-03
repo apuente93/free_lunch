@@ -262,6 +262,33 @@ input {
   }
 }
 
+.content_row
+{
+  cursor: pointer;
+  font-weight: bold;
+  list-style-type: none;
+  float:left;
+  
+  li:first-child(1)
+  {
+    width:200px;
+    height:200px;
+    padding-bottom:150px;
+  }
+  li:nth-child(2)
+  {
+    font-size: 1.5em;
+    text-align:left;
+    width:300px;
+    height:30px;
+  }
+  li:nth-child(3)
+  {
+    font-size: 1.0em;
+    width:300px;
+  }
+}
+
 .product_price
 {
     float:left;
