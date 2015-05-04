@@ -6,8 +6,8 @@
   </thead>
   <tbody>
     <% @stores.each do |store| %>
-      <tr>
-        <td>
+      <div>
+        <div>
             <ul class = "content_row">
               <li><%= link_to fetch_image_tag(store.image_url, :width => 200, 
               :height => 200), store, 
@@ -15,8 +15,8 @@
               <li><%= store.name %></li>
               <li><%= store.address %></li>
             </ul>
-        </td>
-      </tr>
+        </div>
+      </div>
     <% end %>
   </tbody>
 </table>
