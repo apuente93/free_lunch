@@ -18,7 +18,7 @@ User.create!(username:  "xwang322",
              admin: true)
 
 User.create!(username:  "bozhao",
-             email: "bqi22@wisc.edu",
+             email: "bqi2@wisc.edu",
              address: "610 Eagle Height, APT G, Madison, WI 53705",
              password:              "9068273680",
              password_confirmation: "9068273680",

@@ -30,7 +30,7 @@
         <% @products.each do |product| %>
           <ul class = "content_column">
             <li><%= link_to fetch_image_tag(product.image_url, :width => 150, 
-              :height => 150), root_path, 
+              :height => 150), 
               method: :get %></li>
             <li><%= product.name %></li>
             <li>
