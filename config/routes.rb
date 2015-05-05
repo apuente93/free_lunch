@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'order_items/create'
+
+  get 'order_items/update'
+
+  get 'order_items/destroy'
+
+  get 'carts/show'
+
   root 'static_pages#home'
   
   get 'about'   => 'static_pages#about'
@@ -14,10 +22,16 @@ Rails.application.routes.draw do
   get    'recipe'   => 'recipes#new'
 #  post   'recipe'   => 'recipe#create'
   
+  get 'orders'   => 'users#orders'
+  #delete 'orders' => 'users#orders#destroy'
+  delete '/orders' => 'users#orders', :via => :get
+  
   resources :stores
   
   resources :products
   
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
   resources :orders
   
   resources :users

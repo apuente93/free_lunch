@@ -41,6 +41,18 @@ module SessionsHelper
     cookies.delete(:remember_token)
   end
   
+  def forget_order(order)
+    order.forget
+    cookies.delete(:order_id)
+  end
+  
+  def end_order
+    forget_order(current_order)
+    session.delete(:order_id)
+    @order = nil
+  end
+    
+  
   def log_out
     forget(current_user)
     session.delete(:user_id)

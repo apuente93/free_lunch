@@ -15,6 +15,13 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    @orders = Order.all
+    @orders.each do |order|
+      if order.user_id.nil?
+        end_order
+        order.destroy
+      end
+    end
     log_out if logged_in?
     redirect_to root_url
   end

@@ -22,12 +22,14 @@ class StoresController < ApplicationController
     if params[:cat].to_s.length == 0
       @products = @store.products
     else
-      @products = @store.products.where(category: params[:cat]);
+      @products = @store.products.where(category: params[:cat])
     end
     puts params[:cat]
     puts params[:id]
     if logged_in?
-      @order  = current_user.orders.build
+      @order = current_order
+      @order_item = current_order.order_items.new
+      @order_items = current_order.order_items.order("id DESC")
     end
   end
   

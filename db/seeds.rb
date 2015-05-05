@@ -18,8 +18,13 @@ User.create!(username:  "xwang322",
              admin: true)
 
 User.create!(username:  "bozhao",
+<<<<<<< HEAD
              email: "bqi2@wisc.edu",
              address: "610 Eagle Height, APT G, Madison, WI 53705",
+=======
+             email: "bqi22@wisc.edu",
+             address: "610 Eagle Height, Madison, WI 53705",
+>>>>>>> checkout-function
              password:              "9068273680",
              password_confirmation: "9068273680",
              admin: true)
@@ -63,7 +68,7 @@ Store.create!(name:  "Pick'n Save",
              
 #Creates Metcalfe's store 
 Store.create!(name:  "Metcalfe's Market",
-             address: "Hilldale Shopping Center, 726 N Midvale Blvd, Madison, WI 53705",
+             address: "726 N Midvale Blvd, Madison, WI 53705",
              image_url: "http://sabraaitime.com//wp-content/uploads/2014/11/metcalfes-box.png")
 
 #Creates Trader Joe's store 
@@ -80,6 +85,10 @@ Store.create!(name:  "Whole Foods",
 Store.create!(name:  "Willy Street Co-op",
              address: "1221 Williamson St, Madison, WI 53703",
              image_url: "http://www.progressivegrocer.com/sites/default/files/styles/article-full/public/PG%20Articles/Willy%20Street%20Co-op%20Resized.jpg?itok=2OziQe7L")
+             
+OrderStatus.create! id: 1, name: "In Progress"
+OrderStatus.create! id: 2, name: "Placed"
+OrderStatus.create! id: 3, name: "Delivered"
 
 #Creates recipe
 Recipe.create!(name:  "Mexican Chicken",
@@ -151,7 +160,8 @@ product_snacks.each do |snack|
 		    category: "Snacks",
 		    price: "#{c.text}".delete( "$" ).to_f,
 		    image_url: "#{b.attr('src')}".squish,
-	  	  store_id:  store.id)
+	  	  store_id:  store.id,
+	  	  active: true)
 	    end
 	 else
 	 end
@@ -170,7 +180,8 @@ product_beverages.each do |beverage|
 	      category: "Beverages",
 	      price: "#{c.text}".delete( "$" ).to_f,
 		    image_url: "#{b.attr('src')}".squish,
-	      store_id:  store.id)
+	      store_id:  store.id,
+	  	  active: true)
 	    end
     else
 	  end
@@ -189,7 +200,8 @@ product_household.each do |household|
 	      category: "Household Supplies",
 	      price: "#{c.text}".delete( "$" ).to_f,
 		    image_url: "#{b.attr('src')}".squish,
-	      store_id:  store.id)
+	      store_id:  store.id,
+	  	  active: true)
 	    end
     else
 	  end
@@ -208,7 +220,8 @@ product_personal.each do |personal|
 	      category: "Personal Care",
 	      price: "#{c.text}".delete( "$" ).to_f,
 		    image_url: "#{b.attr('src')}".squish,
-	      store_id:  store.id)
+	      store_id:  store.id,
+	  	  active: true)
 	    end
     else
 	  end
@@ -227,7 +240,8 @@ product_breakfast.each do |breakfast|
 	      category: "Breakfast Foods",
 	      price: "#{c.text}".delete( "$" ).to_f,
 		    image_url: "#{b.attr('src')}".squish,
-	      store_id:  store.id)
+	      store_id:  store.id,
+	  	  active: true)
 	    end
     else
 	  end
@@ -246,7 +260,8 @@ product_canned.each do |canned|
 	      category: "Canned Foods",
 	      price: "#{c.text}".delete( "$" ).to_f,
 		    image_url: "#{b.attr('src')}".squish,
-	      store_id:  store.id)
+	      store_id:  store.id,
+	  	  active: true)
 	    end
     else
 	  end

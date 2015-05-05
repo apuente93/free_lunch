@@ -28,6 +28,15 @@ class UsersController < ApplicationController
     end
   end
   
+  def orders
+    @user = current_user
+    if current_user.admin?
+      @orders = Order.all
+    else
+      @orders = current_user.orders
+    end
+  end
+  
   def edit
    @user = User.find(params[:id])
   end

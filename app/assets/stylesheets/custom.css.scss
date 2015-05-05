@@ -270,7 +270,11 @@ input {
   list-style-type: none;
   float:left;
   
+<<<<<<< HEAD
   li:nth-child(1)
+=======
+  li:first-child
+>>>>>>> checkout-function
   {
     width:300px;
     height:230px;
@@ -294,14 +298,22 @@ input {
 .product_price
 {
     float:left;
-    margin-left:20px;
 }
 
 .button_add
 {
+    margin-left:10px;
     float:right;
-    width:60px;
-    margin-right:20px;
+    width:40px;
+}
+
+.content_column3
+{
+  li
+  {
+    list-style-type: none;
+    display:inline;
+  }
 }
 
 .content_column2
@@ -309,25 +321,44 @@ input {
   cursor: pointer;
   list-style-type: none;
   padding-right:3px;
+<<<<<<< HEAD
   width:520px;
   li:nth-child(1)
+=======
+  width:395px;
+  li:first-child
+>>>>>>> checkout-function
   {
-    width:75px;
-    height:75px;
     display: table-cell;
   }
   li:nth-child(2)
   {
+    display: table-cell;
+  }
+  li:nth-child(3)
+  {
     text-align:center;
-    width:400px;
+    width:300px;
     height:75px;
     display: table-cell;
     text-align:left;
   }
-  li:nth-child(3)
+  li:nth-child(4)
   {
-    width:25px;
+    width:40px;
     height:75px;
+    display: table-cell;
+  }
+  li:nth-child(5)
+  {
+    width:85px;
+    height:25px;
+    display: table-cell;
+  }
+  li:nth-child(6)
+  {
+    width:70px;
+    height:25px;
     display: table-cell;
   }
 }
@@ -362,7 +393,12 @@ input {
 
 .checkoutBox
 {
+<<<<<<< HEAD
   left:63%;
+=======
+  top:15%;
+  left:65%;
+>>>>>>> checkout-function
   position:fixed;
   height:80%;
   h4
@@ -376,7 +412,7 @@ input {
   }
   li 
   {
-    font-size: 1.0em;
+    font-size: 0.75em;
   }
 }
 
@@ -397,4 +433,30 @@ input {
     font-weight: normal;
     text-decoration:none;
     color:black !important;
+}
+
+.shopping-cart
+{
+  clear:both;
+}
+
+.checkout-btn
+{
+  margin-top: 20px;
+}
+.shopping_cart_t
+{
+  float:left;
+}
+
+.cart-q
+{
+  width:30px;
+  margin-left:30px;
+}
+
+.form-inline
+{
+  width:40px;
+  margin-left: 10px;
 }

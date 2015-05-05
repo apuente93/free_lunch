@@ -6,26 +6,39 @@ class OrdersController < ApplicationController
   end
   
   def create
-    @order = current_user.orders.build(params[:id])
-    @product = Product.find(params[:product_id])
-    @order.product_id = @product.id
+    @order = current_order
     @order.user_id = current_user.id
+    @order.order_status_id = 2
     if @order.save
-      redirect_to :back 
+      end_order
+      flash[:success] = "Order created!"
+      redirect_to orders_path
+    else
+      end_order
+      redirect_to :back
+    end
+  end
+  
+  def update
+    end_order
+    @order = Order.find(params[:id])
+    if @order.update_attributes(order_params)
+      redirect_to :back
     else
       redirect_to :back
     end
   end
   
   def destroy
-    @order.destroy
+    Order.find(params[:id]).destroy
+    flash[:success] = "Order deleted"
     redirect_to :back
   end
   
   private
   
     def order_params
-      params.require(:order).permit(:product_id, :user_id)
+      params.require(:order).permit(:user_id, :total, :order_status_id)
     end
     
     def correct_user
