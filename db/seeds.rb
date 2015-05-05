@@ -71,15 +71,42 @@ Store.create!(name:  "Trader Joe's",
              address: "1810 Monroe St, Madison, WI 53711",
              image_url: "http://corneliusnews.net/wp-content/uploads/2014/10/traderjoes_logo.jpg")
 
-#Creates Copps(2) store 
-Store.create!(name:  "Copps",
-             address: "6800 Century Ave, Middleton, WI 53562",
-             image_url: "http://www.mabaensch.com/wp-content/uploads/2015/02/copps.jpg")
+#Creates Whole Foods store 
+Store.create!(name:  "Whole Foods",
+             address: "3313 University Ave, Madison, WI 53705",
+             image_url: "http://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Whole_Foods_Market_logo.svg/543px-Whole_Foods_Market_logo.svg.png")
 
 #Creates Willy Street Co-op store 
 Store.create!(name:  "Willy Street Co-op",
              address: "1221 Williamson St, Madison, WI 53703",
              image_url: "http://www.progressivegrocer.com/sites/default/files/styles/article-full/public/PG%20Articles/Willy%20Street%20Co-op%20Resized.jpg?itok=2OziQe7L")
+
+#Creates recipe
+Recipe.create!(name:  "Mexican Chicken",
+             taste: "boneless chicken breasts, cooking spray, gralic, salt, black pepper, cumin, salsa, Cheddar cheese"
+             )
+
+Recipe.create!(name:  "Meatloaf",
+             taste: "beef, eggs, tomato sauce, bread, Parmesan cheese, gralic, parsley, oregano, ham, mozzarella cheese"
+             )
+
+Recipe.create!(name:  "Strawberry Shortcake",
+             taste: "flour, sugar, powder, cream, butter, egg, strawberry"
+             )
+
+Recipe.create!(name:  "Mexican Pork",
+             taste: "boneless chicken breasts, cooking spray, gralic, salt, black pepper, cumin, salsa, Cheddar cheese"
+             )
+
+Recipe.create!(name:  "Lamb",
+             taste: "beef, eggs, tomato sauce, bread, Parmesan cheese, gralic, parsley, oregano, ham, mozzarella cheese"
+             )
+
+Recipe.create!(name:  "Blueberry cake",
+             taste: "flour, sugar, powder, cream, butter, egg, strawberry"
+             )
+
+
 
 product_snacks_page = Nokogiri::HTML(open("http://www.amazon.com/b/ref=pntry_strfnt_cat_2?ie=UTF8&node=8422705011&pf_rd_p=2086987622&pf_rd_s=merchandised-search-5&pf_rd_t=101&pf_rd_i=7301146011&pf_rd_m=ATVPDKIKX0DER&pf_rd_r=069KCFGFX8XDSFZ9B9WB"))   
 product_snacks = product_snacks_page.css("div.rsltGrid.prod.celwidget")
