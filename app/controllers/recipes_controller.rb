@@ -11,9 +11,7 @@ class RecipesController < ApplicationController
       redirect_to 'new'
   end
   
-
   private
-
     def recipe_params
       params.require(:recipes).permit(:name, :taste)
     end
