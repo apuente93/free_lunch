@@ -270,11 +270,7 @@ input {
   list-style-type: none;
   float:left;
   
-<<<<<<< HEAD
-  li:nth-child(1)
-=======
   li:first-child
->>>>>>> checkout-function
   {
     width:300px;
     height:230px;
@@ -321,13 +317,8 @@ input {
   cursor: pointer;
   list-style-type: none;
   padding-right:3px;
-<<<<<<< HEAD
-  width:520px;
-  li:nth-child(1)
-=======
   width:395px;
   li:first-child
->>>>>>> checkout-function
   {
     display: table-cell;
   }
@@ -393,12 +384,8 @@ input {
 
 .checkoutBox
 {
-<<<<<<< HEAD
-  left:63%;
-=======
   top:15%;
   left:65%;
->>>>>>> checkout-function
   position:fixed;
   height:80%;
   h4

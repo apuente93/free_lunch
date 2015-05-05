@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 20150505030921) do
 
   add_index "products", ["store_id"], name: "index_products_on_store_id", using: :btree
 
-<<<<<<< HEAD
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
     t.string   "taste"
@@ -68,19 +67,6 @@ ActiveRecord::Schema.define(version: 20150505030921) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "sells", force: :cascade do |t|
-    t.integer  "store_id"
-    t.integer  "product_id"
-    t.float    "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "sells", ["product_id"], name: "index_sells_on_product_id", using: :btree
-  add_index "sells", ["store_id"], name: "index_sells_on_store_id", using: :btree
-
-=======
->>>>>>> checkout-function
   create_table "stores", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
