@@ -269,7 +269,7 @@ input {
   list-style-type: none;
   float:left;
   
-  li:first-child(1)
+  li:first-child
   {
     width:200px;
     height:200px;
@@ -292,14 +292,22 @@ input {
 .product_price
 {
     float:left;
-    margin-left:20px;
 }
 
 .button_add
 {
+    margin-left:10px;
     float:right;
-    width:60px;
-    margin-right:20px;
+    width:40px;
+}
+
+.content_column3
+{
+  li
+  {
+    list-style-type: none;
+    display:inline;
+  }
 }
 
 .content_column2
@@ -307,24 +315,38 @@ input {
   cursor: pointer;
   list-style-type: none;
   padding-right:3px;
-  width:520px;
+  width:395px;
   li:first-child
   {
-    width:75px;
-    height:75px;
     display: table-cell;
   }
   li:nth-child(2)
   {
-    text-align:center;
-    width:400px;
-    height:75px;
     display: table-cell;
   }
   li:nth-child(3)
   {
-    width:25px;
+    text-align:center;
+    width:300px;
     height:75px;
+    display: table-cell;
+  }
+  li:nth-child(4)
+  {
+    width:40px;
+    height:75px;
+    display: table-cell;
+  }
+  li:nth-child(5)
+  {
+    width:85px;
+    height:25px;
+    display: table-cell;
+  }
+  li:nth-child(6)
+  {
+    width:70px;
+    height:25px;
     display: table-cell;
   }
 }
@@ -359,7 +381,8 @@ input {
 
 .checkoutBox
 {
-  left:67%;
+  top:15%;
+  left:65%;
   position:fixed;
   h4
   {
@@ -372,7 +395,7 @@ input {
   }
   li 
   {
-    font-size: 1.0em;
+    font-size: 0.75em;
   }
 }
 
@@ -393,4 +416,30 @@ input {
     font-weight: normal;
     text-decoration:none;
     color:black !important;
+}
+
+.shopping-cart
+{
+  clear:both;
+}
+
+.checkout-btn
+{
+  margin-top: 20px;
+}
+.shopping_cart_t
+{
+  float:left;
+}
+
+.cart-q
+{
+  width:30px;
+  margin-left:30px;
+}
+
+.form-inline
+{
+  width:40px;
+  margin-left: 10px;
 }

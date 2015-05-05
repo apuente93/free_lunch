@@ -1,7 +1,8 @@
 class Product < ActiveRecord::Base
   belongs_to :store
   
-  has_many :orders
+  has_many :order_items, dependent: :destroy
+  default_scope { where(active: true) }
   has_many :users, :through => :orders
   
   validates :store_id, presence: true

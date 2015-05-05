@@ -1,0 +1,13 @@
+<%= form_for order_item, remote: true do |f| %>
+<ul class = "content_column2">
+    <li><%= link_to fetch_image_tag(product.image_url, :width => 75, 
+    :height => 75), method: :get %>
+    <%= f.number_field :quantity, value: order_item.quantity.to_i, class: "cart-q", min: 1 %>
+    </li>
+    <%= f.hidden_field :product_id, value: product.id %>
+    <li><%= product.name %></li>
+    <li><%= number_to_currency order_item.unit_price %></li>
+    <li><%= f.submit "Update Quantity", class: "btn btn-primary btn-xs" %></li>
+    <li><%= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger btn-xs" } %></li>
+</ul>
+<% end %>

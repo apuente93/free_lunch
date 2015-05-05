@@ -17,7 +17,7 @@
               <li><%= link_to "Canned Foods", polymorphic_path(@store, :cat => "Canned Foods") %></li>
           </ul>
         </li>
-        <li><%= link_to "Past Orders",   url_for(params), class: "categories_nav" %></li>
+        <li><%= link_to "Past Orders",   orders_path, class: "categories_nav" %></li>
     </ul>
     </nav>
     <h4 id = "store_show_title"><%= @store.name %></h4>
@@ -35,11 +35,14 @@
             <li><%= product.name %></li>
             <li>
               <div class = "product_price">
-              $<%= product.price %>
+              <%= number_to_currency product.price %>
               </div>
-              <%= form_for(@order) do |f| %>
-                <%= hidden_field_tag(:product_id, product.id) %>
+              <%= form_for @order_item, remote:true do |f| %>
+              <div class="input-group">
+                <%= f.number_field :quantity, value: 1, class: "form-inline", min: 1 %>
+                <%= f.hidden_field :product_id, value: product.id %>
                 <%= f.submit "Add +", class: "btn btn-primary btn-sm button_add"%>
+              </div>
               <% end %>
             </li>
           </ul>
@@ -47,24 +50,17 @@
     <% end %>
     </div>
     <div class = "col-md-4 checkoutBox">
-      <h3>Shopping Cart (<%= @user.orders.count %>)</h3>
-      <% if @user.orders.any? %>
-        <div class = "checkoutScroll">
-        <% @user.orders.each do |order| %>
-          <ul class = "content_column2">
-            <li><%= link_to fetch_image_tag(order.product.image_url, :width => 75, 
-              :height => 75), 
-              method: :get %></li>
-            <li><%= order.product.name %></li>
-            <li>$<%= order.product.price %></li>
-          </ul>
-        <% end %>
-        </div>
-        <h4>Order Total: $<%= @user.products.sum(:price) %></h4>
-        <%= form_for(@order) do |f| %>
-                <%= f.submit "Checkout", class: "btn btn-primary btn-md" %>
-        <% end %>
+      <h3 class = "shopping_cart_t">Shopping Cart</h3>
+      <% if !@order.nil? %>
+      <%= form_for @order do |f| %>
+                <%= f.hidden_field :user_id, value: @user.id %>
+                <%= f.hidden_field :total, value: @order.total %>
+                <%= f.hidden_field :order_status_id, value: 2 %>
+                <%= f.submit "Checkout", class: "btn btn-primary btn-md checkout-btn" %>
       <% end %>
+      <% end %>
+      <%= render 'carts/shopping_cart' %>
+    </div>
     </div>
 </div>
 </div>

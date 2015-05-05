@@ -1,0 +1,35 @@
+<% if !@orders.nil? %>
+<table class = "table-bordered">
+  <tr>
+    <th>User</th>
+    <th>Address</th>
+    <th>Date and Time</th>
+    <th>Total</th>
+    <th>Order Status</th>
+    <% if current_user.admin? %>
+    <th></th>
+    <th></th>
+    <% else %>
+    <th></th>
+    <% end %>
+  </tr>
+<% @orders.each do |order| %>
+    <%= form_for order do |f| %>
+      <tr>
+        <td><%= order.user.username %></td>
+        <td><%= order.user.address %></td>
+        <td><%= order.created_at %></td>
+        <td><%= order.total %></td>
+        <% order_statuses = OrderStatus.all.map { |status| [status.name, status.id] } %>
+        <% if current_user.admin? %>
+        <td><%= f.select :order_status_id, options_for_select(order_statuses, order.order_status.id), class: 'form-control' %></td>
+        <td><%= f.submit "Update Order Status", class: "btn btn-primary btn-xs" %></td>
+        <% else %>
+        <td><%= order.order_status.name %></td>
+        <% end %>
+        <td><%= link_to "Delete", order, { data: { confirm: "Are you sure you wish to delete this order?" }, method: :delete, class: "btn btn-danger btn-xs" } %></td>
+      </tr>
+    <% end %>
+<% end %>
+</table>
+<% end %>
