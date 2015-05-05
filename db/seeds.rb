@@ -83,27 +83,33 @@ Store.create!(name:  "Willy Street Co-op",
 
 #Creates recipe
 Recipe.create!(name:  "Mexican Chicken",
-             taste: "boneless chicken breasts, cooking spray, gralic, salt, black pepper, cumin, salsa, Cheddar cheese"
+             taste: "boneless chicken breasts, cooking spray, gralic, salt, black pepper, cumin, salsa, Cheddar cheese",
+             image_url: "http://images.media-allrecipes.com/userphotos/250x250/394699.jpg"
              )
 
 Recipe.create!(name:  "Meatloaf",
-             taste: "beef, eggs, tomato sauce, bread, Parmesan cheese, gralic, parsley, oregano, ham, mozzarella cheese"
+             taste: "beef, eggs, tomato sauce, bread, Parmesan cheese, gralic, parsley, oregano, ham, mozzarella cheese",
+             image_url: "http://images.media-allrecipes.com/userphotos/250x250/2159557.jpg"
              )
 
 Recipe.create!(name:  "Strawberry Shortcake",
-             taste: "flour, sugar, powder, cream, butter, egg, strawberry"
+             taste: "flour, sugar, powder, cream, butter, egg, strawberry",
+             image_url: "http://images.media-allrecipes.com/userphotos/250x250/215262.jpg"
              )
 
-Recipe.create!(name:  "Mexican Pork",
-             taste: "boneless chicken breasts, cooking spray, gralic, salt, black pepper, cumin, salsa, Cheddar cheese"
+Recipe.create!(name:  "Steak with Mushrooms",
+             taste: "beef, crumbs, onions, egg, salt, mushroom, salsa, Cheddar cheese",
+             image_url: "http://images.media-allrecipes.com/userphotos/250x250/1730959.jpg"
              )
 
-Recipe.create!(name:  "Lamb",
-             taste: "beef, eggs, tomato sauce, bread, Parmesan cheese, gralic, parsley, oregano, ham, mozzarella cheese"
+Recipe.create!(name:  "Garlic Cheese Grits with Shrimp",
+             taste: "grits, pepper, tomato sauce, butter, Parmesan cheese, gralic, shrimp, olive oil, ham, mozzarella cheese",
+             image_url: "http://images.media-allrecipes.com/userphotos/250x250/904498.jpg"
              )
 
-Recipe.create!(name:  "Blueberry cake",
-             taste: "flour, sugar, powder, cream, butter, egg, strawberry"
+Recipe.create!(name:  "Fabulous Wet Burritos",
+             taste: "beef, onion, gralic, cumin, salt, pepper, beans, lettuce, tomato",
+             image_url: "http://images.media-allrecipes.com/userphotos/250x250/616032.jpg"
              )
 
 

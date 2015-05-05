@@ -1,17 +1,22 @@
-<% provide(:title, "recipe") %>
-<h1>About Us</h1>
-<p>
-    -recipe
-</p>
-<p>
-    - Users can choose products from stores around their home.
-</p>
-<p>
-    - Users can order items based on the ingredient list of recipes and can keep a list of favorite recipes.
-</p>
-<p>
-    - The system can provide suggested recipes and products based on their order history
-</p>
-<p>
-    - The system can automatically suggest recipes based on users’ favourite
-</p>
+<% provide(:title, "Recipe") %>
+
+<table class = "content_table">
+  <thead>
+    <h1>Recipe</h1>
+  </thead>
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <div>
+        <div>
+            <ul class = "content_row">
+               <li><%= link_to fetch_image_tag(recipe.image_url, :width => 200, 
+              :height => 200), 
+              method: :get %></li>
+              <li><%= recipe.name %></li>
+              <li><%= recipe.taste %></li>
+            </ul>
+        </div>
+      </div>
+    <% end %>
+  </tbody>
+</table>
