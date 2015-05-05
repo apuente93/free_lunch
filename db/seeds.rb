@@ -99,6 +99,11 @@ product_breakfast = product_breakfast_page.css("div.rsltGrid.prod.celwidget")
 product_canned_page = Nokogiri::HTML(open("http://www.amazon.com/s/ref=amb_link_406100822_3?ie=UTF8&bbn=8422704011&rh=i%3Apantry%2Cn%3A8422704011%2Cn%3A!16310211%2Cn%3A6464939011&srs=7301146011&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-5&pf_rd_r=0VSD9QJT0D5F3224B4X1&pf_rd_t=101&pf_rd_p=2062785582&pf_rd_i=8422704011"))   
 product_canned = product_canned_page.css("div.rsltGrid.prod.celwidget")
 
+=begin
+product_vegetable_page = Nokogiri::HTML(open("https://fresh.amazon.com/Search?input=&pageNumber=2&sort=bestselling&browseNode=16319281,6507190011,6507193011,6507186011&allergen=&resultsPerPage=42"))
+product_vegetable = product_vegetable_page.css("div.smallProduct")
+=end
+
 stores = Store.all
 
 product_snacks.each do |snack|
@@ -214,7 +219,28 @@ product_canned.each do |canned|
 	  end
 	end
 end
-             
+
+=begin
+product_vegetable.each do |vegetable|
+  a = vegetable.css("h4.title.longTitle a")
+  b = vegetable.css("img")
+  c = vegetable.css("span.value")
+	if "#{vegetable.text}".squish.empty?
+	else
+	  if Product.find_by_name("#{a.text}".squish).nil? && "#{a.text}".squish.length <= 65
+	    stores.each do |store|
+	      Product.create!(name: "#{a.text}".squish,
+	      category: "Vegetables",
+	      price: "#{c.text}".delete( "$" ).to_f,
+		    image_url: "#{b.attr('src')}".squish,
+	      store_id:  store.id)
+	    end
+    else
+	  end
+	end
+end
+=end
+
 =begin
 99.times do |n|
   username  = Faker::Internet.user_name
