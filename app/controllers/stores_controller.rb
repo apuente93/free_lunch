@@ -21,8 +21,9 @@ class StoresController < ApplicationController
     @user = User.find(current_user.id)
     if params[:cat].to_s.length == 0
       @products = @store.products
-    else
-      @products = @store.products.where(category: params[:cat])
+      
+    elsif params[:cat].to_s == "alllow"
+      @products = @store.products.where(category: "Snacks").order(price: :asc)
     end
     puts params[:cat]
     puts params[:id]
