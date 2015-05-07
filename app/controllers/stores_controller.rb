@@ -31,6 +31,13 @@ class StoresController < ApplicationController
       @order_item = current_order.order_items.new
       @order_items = current_order.order_items.order("id DESC")
     end
+      @productsAll = @store.products.count.to_s
+      @productsSnacks = @store.products.where(category: "Snacks").count.to_s
+      @productsBeverages = @store.products.where(category: "Beverages").count.to_s
+      @productsHouseholdSupplies = @store.products.where(category: "Household Supplies").count.to_s
+      @productsPersonalCare = @store.products.where(category: "Personal Care").count.to_s
+      @productsBreakfastFoods = @store.products.where(category: "Breakfast Foods").count.to_s
+      @productsCannedFoods = @store.products.where(category: "Canned Foods").count.to_s
   end
   
   private
