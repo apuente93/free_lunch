@@ -23,6 +23,7 @@ class OrdersController < ApplicationController
     end_order
     @order = Order.find(params[:id])
     if @order.update_attributes(order_params)
+      flash[:success] = "Order Status Updated"
       redirect_to :back
     else
       redirect_to :back
@@ -31,7 +32,7 @@ class OrdersController < ApplicationController
   
   def destroy
     Order.find(params[:id]).destroy
-    flash[:success] = "Order deleted"
+    flash[:success] = "Order cancelled"
     redirect_to :back
   end
   

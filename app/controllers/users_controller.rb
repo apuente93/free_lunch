@@ -31,9 +31,9 @@ class UsersController < ApplicationController
   def orders
     @user = current_user
     if current_user.admin?
-      @orders = Order.all
+      @orders = Order.all.sort{|p1, p2| p1.created_at <=> p2.created_at}
     else
-      @orders = current_user.orders
+      @orders = current_user.orders.sort{|p1, p2| p1.created_at <=> p2.created_at}
     end
   end
   
