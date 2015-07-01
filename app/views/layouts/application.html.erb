@@ -25,8 +25,9 @@
     <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
     <%= yield %>
-    <%= render 'static_pages/about' %>
+    <%= render 'layouts/about' %>
     <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>
+
 </body>
 </html>
