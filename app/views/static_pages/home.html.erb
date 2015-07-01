@@ -1,12 +1,32 @@
-<div class="center jumbotron">
-  <h1>Free Lunch</h1>
-  
-  <%= link_to image_tag("logo.jpg", alt: "Free Lunch Logo", class: "style_logo"),
-            root_path %>
-
-  <h2>
-     All your groceries delivered to your doorstep, by just the click of a button!
-  </h2>
-
-  <%= link_to "Sign Up!", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
+<!-- ******HOME****** -->
+<section id="promo" class="promo section offset-header">
+  <div class="container text-center">
+    <h2 class="title">grocer<span class="highlight">Bot</span></h2>
+    <p class="intro">All your groceries delivered to your doorstep, by just the click of a button!</p>
+    <div class="btns">
+        <%= link_to "Enter Zip Code:", "#", class: "btn btn-cta-secondary" %>
+        <%= link_to "Sign Up", signup_path, class: "btn btn-cta-primary" %>
+    </div>
+    <ul class="meta list-inline">
+      <li><%= link_to "View on GitHub", "#" %></li>
+      <li><%= link_to "Full Documentation", "#" %></li>
+      <li>Created by: <%= link_to "Alejandro Puente", "#" %></li>
+    </ul><!--//meta-->
+  </div><!--//container-->
+  <div class="social-media">
+    <div class="social-media-inner container text-center">
+      <ul class="list-inline">
+        <li class="twitter-follow"><a href="https://twitter.com/3rdwave_themes" class="twitter-follow-button" data-show-count="false">Follow @3rdwave_themes</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </li><!--//twitter-follow-->
+        <li class="twitter-tweet">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-via="3rdwave_themes" data-hashtags="bootstrap">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </li><!--//twitter-tweet-->
+        <li class="facebook-like">
+          <div class="fb-like" data-href="http://themes.3rdwavemedia.com/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+        </li><!--//facebook-like-->
+      </ul>
+    </div>
+  </div>
+</section><!--//home-->

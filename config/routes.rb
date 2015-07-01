@@ -18,9 +18,6 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-
-  get    'recipe'   => 'recipes#new'
-#  post   'recipe'   => 'recipe#create'
   
   get 'orders'   => 'users#orders'
   #delete 'orders' => 'users#orders#destroy'

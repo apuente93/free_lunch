@@ -9,27 +9,6 @@ User.create!(username:  "apuente93",
              password:              "9066278202",
              password_confirmation: "9066278202",
              admin: true)
-             
-User.create!(username:  "xwang322",
-             email: "xwang322@wisc.edu",
-             address: "4701 Sheboygan Ave, Madison, WI 53705",
-             password:              "9066383432",
-             password_confirmation: "9066383432",
-             admin: true)
-
-User.create!(username:  "bozhao",
-             email: "bqi2@wisc.edu",
-             address: "610 Eagle Height, Madison, WI 53705",
-             password:              "9068273680",
-             password_confirmation: "9068273680",
-             admin: true)
-
-User.create!(username:  "gdavies",
-             email: "gdavies@wisc.edu",
-             address: "1334 Vilas Ave, Madison, WI 53715",
-             password:              "9067177924",
-             password_confirmation: "9067177924",
-             admin: true)
 
 #Creates Fresh Madison Market store
 Store.create!(name:  "Fresh Madison Market",
@@ -84,33 +63,6 @@ Store.create!(name:  "Willy Street Co-op",
 OrderStatus.create! id: 1, name: "In Progress"
 OrderStatus.create! id: 2, name: "Placed"
 OrderStatus.create! id: 3, name: "Delivered"
-
-#Creates recipe
-Recipe.create!(name:  "Mexican Chicken",
-             taste: "boneless chicken breasts, cooking spray, gralic, salt, black pepper, cumin, salsa, Cheddar cheese",
-             image_url: "http://images.media-allrecipes.com/userphotos/250x250/394699.jpg")
-
-Recipe.create!(name:  "Meatloaf",
-             taste: "beef, eggs, tomato sauce, bread, Parmesan cheese, gralic, parsley, oregano, ham, mozzarella cheese",
-             image_url: "http://images.media-allrecipes.com/userphotos/250x250/2159557.jpg")
-
-Recipe.create!(name:  "Strawberry Shortcake",
-             taste: "flour, sugar, powder, cream, butter, egg, strawberry",
-             image_url: "http://images.media-allrecipes.com/userphotos/250x250/215262.jpg")
-
-Recipe.create!(name:  "Steak with Mushrooms",
-             taste: "beef, crumbs, onions, egg, salt, mushroom, salsa, Cheddar cheese",
-             image_url: "http://images.media-allrecipes.com/userphotos/250x250/1730959.jpg")
-
-Recipe.create!(name:  "Garlic Cheese Grits with Shrimp",
-             taste: "grits, pepper, tomato sauce, butter, Parmesan cheese, gralic, shrimp, olive oil, ham, mozzarella cheese",
-             image_url: "http://images.media-allrecipes.com/userphotos/250x250/904498.jpg")
-
-Recipe.create!(name:  "Fabulous Wet Burritos",
-             taste: "beef, onion, gralic, cumin, salt, pepper, beans, lettuce, tomato",
-             image_url: "http://images.media-allrecipes.com/userphotos/250x250/616032.jpg")
-
-
 
 product_snacks_page = Nokogiri::HTML(open("http://www.amazon.com/b/ref=pntry_strfnt_cat_2?ie=UTF8&node=8422705011&pf_rd_p=2086987622&pf_rd_s=merchandised-search-5&pf_rd_t=101&pf_rd_i=7301146011&pf_rd_m=ATVPDKIKX0DER&pf_rd_r=069KCFGFX8XDSFZ9B9WB"))   
 product_snacks = product_snacks_page.css("div.rsltGrid.prod.celwidget")
